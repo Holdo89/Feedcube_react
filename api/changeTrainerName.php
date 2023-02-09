@@ -1,6 +1,6 @@
 <?php
     require_once "../config/config.php";
-
+//Test
     $Trainer = $_REQUEST["Trainer"];
     $newName = $_REQUEST["NewName"];
     $sql="UPDATE users SET name = '".$newName."' WHERE username LIKE '".$Trainer."'";
