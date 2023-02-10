@@ -1,6 +1,8 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
 
 $url = $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
 $parsedUrl = parse_url($url);
