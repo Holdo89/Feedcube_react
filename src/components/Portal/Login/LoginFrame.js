@@ -11,7 +11,7 @@ const LoginFrame = () => {
 
   const [post, setPost] = React.useState("");
 
-  React.useEffect(() => {axios.get(getTrainer).then((response) => {setPost(response.data);});}, []);
+  React.useEffect(() => {axios.get(getTrainer).then((response) => {setPost(response.data.Trainer);});}, []);
   
   const handleSubmit = (e) => {
     e.preventDefault();
