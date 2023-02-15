@@ -5,11 +5,11 @@
   var url = host.replace(":3000",'');
   if (url.includes("localhost"))
   {
-    url = url+"/Feedcube_react/api";
+    url = url+"/Feedcube_react/api/";
   }
   else
   {
-    url = url+"/api";
+    url = url+"/api/";
   }
 
   export const baseURL = protocol+"//"+url;
