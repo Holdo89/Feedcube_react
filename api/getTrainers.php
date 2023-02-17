@@ -1,5 +1,7 @@
 <?php
     require_once "./checkIsAdmin.php";
+    
+    $Username = $token->userName;
 
     $sql="SELECT name FROM users WHERE username LIKE '".$Username."'";
     $result=mysqli_query($link, $sql);

@@ -15,7 +15,7 @@ $enteredUsername =  mysqli_real_escape_string($link, $data->username);
 $enteredPassword =  mysqli_real_escape_string($link, $data->password);
 //TODO Wenn keine EIngaben passieren soll kein Fehler gelogged werden
 
-$sql = "SELECT password FROM users WHERE username = '".$enteredUsername."' LIMIT 1";
+$sql = "SELECT password, Is_Admin, Is_Trainer FROM users WHERE username = '".$enteredUsername."'";
 $result = mysqli_query($link,$sql);
 $row = mysqli_fetch_assoc($result);
 if(password_verify($enteredPassword, $row["password"]))
@@ -39,6 +39,8 @@ if ($hasValidCredentials) {
         'nbf'  => $issuedAt->getTimestamp(),         // Not before
         'exp'  => $expire,                           // Expire
         'userName' => $username,                     // User name
+        'isAdmin' => $row["Is_Admin"],
+        'isTrainer' => $row["Is_Trainer"],
     ];
 
     echo JWT::encode(

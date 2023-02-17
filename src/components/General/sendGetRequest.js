@@ -10,4 +10,5 @@ export const sendGetRequest = async (endpoint) => {
     });
     const Response = await res.text();
     console.log(Response);
+    return Response;
   }
