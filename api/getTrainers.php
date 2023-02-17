@@ -1,8 +1,6 @@
 <?php
     require_once "./checkIsAdmin.php";
 
-    $Username = $_REQUEST["username"];
-
     $sql="SELECT name FROM users WHERE username LIKE '".$Username."'";
     $result=mysqli_query($link, $sql);
     while ($row=mysqli_fetch_array($result)) {
