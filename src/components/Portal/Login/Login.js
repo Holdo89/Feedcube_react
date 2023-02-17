@@ -30,7 +30,7 @@ const Login = () => {
                 <div style={{textAlign:"left"}}>
                 <a className="Link" style={{textAlign:"left"}}>Passwort vergessen?</a>
                 </div>
-                <input type="button" onClick={() => sendGetRequest("getTrainers.php")} id="button" className="btn btn-primary" value="getTrainerName"></input>
+                <input type="button" onClick={() => sendGetRequest("getTrainers.php?username="+{username}.username)} id="button" className="btn btn-primary" value="getTrainerName"></input>
                 <input type="submit" className="btn btn-primary" value="Login"></input>
                 <p style={{marginTop:"20px"}}>Neu bei Feedcube? <a className="Link">Benutzer erstellen</a></p>
             </div>
