@@ -5,20 +5,36 @@ import React from "react";
 import {sendGetRequest} from "../../General/sendGetRequest.js"
 import {validateCredentials} from "../../General/validateCredentials"
 import './Login.css'
-
+import { UserContext } from '../../Contexts/UserContext';
+import { useContext } from 'react';
 
 const Login = () => {
+
+  const {Permission, setPermission} = useContext(UserContext);
   const [username, setUsername] = React.useState(""); 
   const [password, setPassword] = React.useState("");
-  
-  const handleSubmit = (e) => {
+
+  const HandleSubmit = (e) => {
     e.preventDefault();
-    validateCredentials({username, password})
+    validateCredentials({username, password}).then(function(valid) 
+    {
+      if(valid==true)
+      {
+        sendGetRequest("getUserContext").then(function (value)
+        {
+          let userContext = JSON.parse(value);
+          setPermission(userContext.Role);
+        });
+      }
+      else{
+        setPermission("0");
+      }
+    })
   }
 
   return (
     <div className="LoginPage">
-      <form id = "loginForm" className="form-signin" onSubmit={handleSubmit}>
+      <form id = "loginForm" className="form-signin" onSubmit={HandleSubmit}>
         <img src={Feedcubelogo} alt="logo" height="80px" style={{marginBottom:"20px"}}/>
         <div className="LoginFrame">
             <div>

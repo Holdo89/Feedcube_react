@@ -2,19 +2,17 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './components/Portal/Login/Login'
 import Dashboard from './components/Portal/Dashboard/Dashboard';
-
+import UserContextProvider from './components/Contexts/UserContext';
 
 const App = () => {
 
+  const [Permission, setPermission] = React.useState("0");
+  const value = { Permission, setPermission };
   return (
-    <div className="wrapper">
-      <BrowserRouter>
-        <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+      <UserContextProvider Permission = {value}>
+            <Login />
+            <Dashboard />
+      </UserContextProvider>
   );
 }
 

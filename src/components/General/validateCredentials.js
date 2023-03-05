@@ -21,11 +21,20 @@ export async function validateCredentials(userData) {
       console.log(res);
       if (res.status >= 200 && res.status <= 299) {
         const jwt = await res.text();
-        store.setJWT(jwt);
-        console.log(jwt)
+        if(jwt!="invalid credentials ")
+        {
+          store.setJWT(jwt);
+          console.log("valid token: "+jwt);
+          return true;
+        }
+        else{
+          console.log("invalid credentials")
+          return false;
+        }
       } else {
         // Handle errors
         console.log(res.status, res.statusText);
-        console.log("Invalid Credentials")
+        console.log("Invalid Credentials");
+        return false;
       }
     }
