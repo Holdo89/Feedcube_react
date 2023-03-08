@@ -16,7 +16,7 @@ $enteredPassword =  mysqli_real_escape_string($link, $data->password);
 //TODO Wenn keine EIngaben passieren soll kein Fehler gelogged werden
 
 try {
-    $sql = "SELECT password, Is_Admin, Is_Trainer FROM users WHERE username = '".$enteredUsername."'";
+    $sql = "SELECT password, name, Is_Admin, Is_Trainer FROM users WHERE username = '".$enteredUsername."'";
     $result = mysqli_query($link, $sql);
     $row = mysqli_fetch_assoc($result);
     if (isset($row["password"])&&password_verify($enteredPassword, $row["password"])) {
@@ -38,6 +38,7 @@ try {
             'nbf'  => $issuedAt->getTimestamp(),         // Not before
             'exp'  => $expire,                           // Expire
             'userName' => $username,                     // User name
+            'name' => $row["name"],
             'isAdmin' => $row["Is_Admin"],
             'isTrainer' => $row["Is_Trainer"],
         ];

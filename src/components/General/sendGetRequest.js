@@ -1,11 +1,13 @@
 import {baseURL} from "./baseURL.js"
-import {store} from "./validateCredentials.js"
+import {getJWTCookie} from '../Authentication/cookieFunctions';
+
+const jwt = getJWTCookie();
 
 export const sendGetRequest = async (endpoint) => {
     const endpointUrl = baseURL+endpoint;
     const res = await fetch(endpointUrl, {
       headers: {
-        'Authorization': `Bearer ${store.JWT}`
+        'Authorization': `Bearer ${jwt}`
       }
     });
     const Response = await res.text();

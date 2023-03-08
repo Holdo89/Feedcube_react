@@ -1,11 +1,5 @@
-import {baseURL} from "./baseURL.js"
-
-export const store = {};
-
-// Inserts the jwt to the store object
-store.setJWT = function (data) {
-  this.JWT = data;
-};
+import {baseURL} from "../General/baseURL.js"
+import {setJWTCookie} from './cookieFunctions';
 
 export async function validateCredentials(userData) {
     const res =  await fetch(baseURL+'authenticate.php', {
@@ -21,9 +15,9 @@ export async function validateCredentials(userData) {
       console.log(res);
       if (res.status >= 200 && res.status <= 299) {
         const jwt = await res.text();
-        if(jwt!="invalid credentials ")
+        if(jwt!=="invalid credentials ")
         {
-          store.setJWT(jwt);
+          setJWTCookie(jwt);
           console.log("valid token: "+jwt);
           return true;
         }

@@ -7,7 +7,9 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
+    "cookie": "^0.5.0",
     "express-basic-auth": "^1.2.1",
+    "jose": "^4.13.1",
     "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-auth-kit": "^2.7.1",
@@ -15,6 +17,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
+    "verify-jwt": "^1.0.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -45,5 +48,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2"
   },
-  "resolutions": { "react-devtools-core": "4.14.0" }
+  "resolutions": {
+    "react-devtools-core": "4.14.0"
+  }
 }
