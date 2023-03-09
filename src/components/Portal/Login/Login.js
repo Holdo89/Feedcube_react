@@ -64,10 +64,11 @@ const Login = () => {
             <p className="alert alert-danger" role="alert" style={{display:errorVisibility}}>{error}</p>
 
             <div style={{ textAlign: "left" }}>
-              <a className="Link" style={{ textAlign: "left" }}>
+              <a href="/dashboard" className="Link" style={{ textAlign: "left" }}>
                 Passwort vergessen?
               </a>
             </div>
+            
             <input
               type="button"
               onClick={() => sendGetRequest("getTrainers.php")}
@@ -81,7 +82,7 @@ const Login = () => {
               value="Login"
             ></input>
             <p style={{ marginTop: "20px" }}>
-              Neu bei Feedcube? <a className="Link">Benutzer erstellen</a>
+              Neu bei Feedcube? <a href="/dashboard" className="Link">Benutzer erstellen</a>
             </p>
           </div>
         </div>

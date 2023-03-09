@@ -7,7 +7,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
   function logout(){
     deleteCookie('jwt');
-    navigate("../")
+    navigate("/")
   }
   return(
     <>
