@@ -1,7 +1,14 @@
 import React from 'react';
 import {deleteCookie} from '../../Authentication/cookieFunctions';
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  
+  const navigate = useNavigate();
+  function logout(){
+    deleteCookie('jwt');
+    navigate("/")
+  }
   return(
     <>
     <h2>Dashboard</h2>
@@ -10,9 +17,3 @@ export default function Dashboard() {
   );
 }
 
-
-function logout(){
-  console.log("logout")
-  deleteCookie('jwt');
-  window.location.href = '/';
-}
