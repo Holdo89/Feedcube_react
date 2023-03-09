@@ -1,6 +1,7 @@
 import React from 'react';
 import {deleteCookie} from '../../Authentication/cookieFunctions';
 import { useNavigate } from "react-router-dom";
+import { FaBeer } from 'react-icons/fa';
 
 export default function Dashboard() {
   
@@ -11,6 +12,7 @@ export default function Dashboard() {
   }
   return(
     <>
+    <FaBeer />
     <h2>Dashboard</h2>
     <button onClick={logout}>Logout</button>
     </>
