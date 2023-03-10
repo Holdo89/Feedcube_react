@@ -1,0 +1,27 @@
+.navbar{
+    background-color: grey;
+    display:none;
+    color: white;
+}
+
+.sidebar{
+    height: 100vh; 
+    float:left;
+    color: white;
+}
+
+.sidebarburger{
+    font-size:25px;
+    position: absolute;
+    right:20px;
+    bottom:10px
+}
+
+@media only screen and (max-width: 479px) {
+    .sidebarburger{
+        display:none;
+    }
+    .navbar{
+        display:flex
+    }
+}
