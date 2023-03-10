@@ -1,5 +1,5 @@
 .navbar{
-    background-color: grey;
+    background-color: #404c64;
     display:none;
     color: white;
 }
@@ -7,7 +7,9 @@
 .sidebar{
     height: 100vh; 
     float:left;
+    background-color:#404c64;
     color: white;
+    box-shadow: 7px 3px 20px 5px rgba(0, 0, 0, 0.2);
 }
 
 .sidebarburger{
@@ -18,6 +20,10 @@
 }
 
 @media only screen and (max-width: 479px) {
+    .sidebar{
+        box-shadow: none;
+
+    }
     .sidebarburger{
         display:none;
     }

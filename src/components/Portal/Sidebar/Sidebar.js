@@ -28,7 +28,7 @@ function CommonSidebar() {
   return (
     <>
     <Navbar />
-      <Sidebar className = 'sidebar' breakPoint="xs" backgroundColor='grey'>
+      <Sidebar className = 'sidebar' breakPoint="xs" backgroundColor='#404c64' style={{border:"none"}}>
       <img
           src={Feedcubelogo}
           alt="logo"
