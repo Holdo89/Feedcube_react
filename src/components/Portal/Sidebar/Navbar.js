@@ -1,8 +1,8 @@
 import { useProSidebar } from 'react-pro-sidebar';
 import React from 'react'
-import Hamburger from 'hamburger-react'
 import "./style.css";
-import Feedcubelogo from "../../assets/brand/FEEDCUBE_logo_white.png";
+import Feedcubelogo from "../../../assets/brand/FEEDCUBE_logo_white.png";
+import { HiBars3BottomLeft } from 'react-icons/hi2';
 
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
           height="45px"
           style={{ marginLeft: "15px" }}
         />
-        <div style={{float:"right"}} onClick={() => (toggleSidebar())}><Hamburger toggled={false} size={20} /></div>
+        <div style={{float:"right", marginRight:"15px"}} onClick={() => (toggleSidebar())}><HiBars3BottomLeft fontSize={"30px"}/></div>
     </div>
     )
 }

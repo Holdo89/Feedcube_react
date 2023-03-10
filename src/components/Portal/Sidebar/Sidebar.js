@@ -1,27 +1,27 @@
 import { Sidebar, Menu, MenuItem, useProSidebar } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
-import Hamburger from 'hamburger-react'
 import { useState } from 'react';
 import Navbar from './Navbar';
-import Feedcubelogo from "../../assets/brand/FEEDCUBE_logo_white.png";
-import { FaAngleDoubleLeft, FaAngleDoubleRight, FaBeer, FaLock } from 'react-icons/fa';
+import Feedcubelogo from "../../../assets/brand/FEEDCUBE_logo_white.png";
+import {FaBeer, FaLock } from 'react-icons/fa';
+import {MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight} from 'react-icons/md';
 
 
 
 
 function CommonSidebar() {
   const { collapseSidebar, collapsed } = useProSidebar();
-  const [arrow, setArrow] = useState(<FaAngleDoubleLeft/>);
+  const [arrow, setArrow] = useState(<MdKeyboardDoubleArrowLeft/>);
 
   function showSidebar(){
     collapseSidebar();
     if(collapsed===false)
     {
-      setArrow(<FaAngleDoubleRight />)
+      setArrow(<MdKeyboardDoubleArrowRight />)
     }
     else
     {
-      setArrow(<FaAngleDoubleLeft />)
+      setArrow(<MdKeyboardDoubleArrowLeft />)
     }
   }
 

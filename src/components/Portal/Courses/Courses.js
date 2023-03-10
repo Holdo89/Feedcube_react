@@ -1,5 +1,5 @@
 import React from 'react';
-import CommonSidebar from '../../General/Sidebar';
+import CommonSidebar from '../Sidebar/Sidebar';
 
 export default function Courses() {
   

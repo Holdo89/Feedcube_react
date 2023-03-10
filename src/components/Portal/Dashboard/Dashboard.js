@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaBeer } from 'react-icons/fa';
-import CommonSidebar from '../../General/Sidebar';
+import CommonSidebar from '../Sidebar/Sidebar';
 import {logout} from "../../Authentication/logout"
 
 export default function Dashboard() {
