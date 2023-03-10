@@ -1,0 +1,14 @@
+
+.page{
+    background-color: ghostwhite;
+    height: 100vh;
+}
+
+.bg-white{
+    height:100px;
+    min-width:200px;
+}
+
+.col{
+    margin-top:20px;
+}
